@@ -1,6 +1,6 @@
 // 按照教程配置动态切换主题方法 https://blog.csdn.net/Joey_Tribiani/article/details/117420207?spm=1001.2014.3001.5501
 import client from "webpack-theme-color-replacer/client";
-import generate from "@ant-design/colors/lib/generate";
+// import generate from "@ant-design/colors/lib/generate";
 
 function getAntdSerials(color) {
     // 淡化（即less的tint）
@@ -8,7 +8,7 @@ function getAntdSerials(color) {
         return client.varyColor.lighten(color, i / 10);
     });
     // colorPalette变换得到颜色值
-    const colorPalettes = generate(color);
+    const colorPalettes = '#ff5600';
     const rgb = client.varyColor.toNum3(color.replace("#", "")).join(",");
     return lightens.concat(colorPalettes).concat(rgb);
 }
